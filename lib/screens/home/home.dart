@@ -16,6 +16,14 @@ class _HomeState extends State<Home> {
         onPressed: null,
         child: Icon(Icons.add),
       ),
+      body: ListView.separated(
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile();
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return Divider();
+          },
+          itemCount: 55),
     );
   }
 }
