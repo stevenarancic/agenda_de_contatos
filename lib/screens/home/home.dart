@@ -1,5 +1,6 @@
 import 'package:agenda_de_contatos/model/contact.dart';
 import 'package:agenda_de_contatos/provider/contacts.dart';
+import 'package:agenda_de_contatos/screens/details/details.dart';
 import 'package:agenda_de_contatos/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +40,15 @@ class _HomeState extends State<Home> {
                 icon: Icon(
                   Icons.chevron_right,
                 ),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return Details(contact);
+                      },
+                    ),
+                  );
+                },
                 color: grayTheme,
               ),
               title: Row(
