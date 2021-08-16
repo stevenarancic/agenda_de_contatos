@@ -25,8 +25,14 @@ class _HomeState extends State<Home> {
 
             return ListTile(
               leading: IconButton(
-                icon: Icon(Icons.star),
-                onPressed: null,
+                icon: (contact.isFavorite)
+                    ? Icon(Icons.star)
+                    : Icon(Icons.star_outline),
+                onPressed: () {
+                  setState(() {
+                    contact.isFavorite = !contact.isFavorite;
+                  });
+                },
                 color: blueTheme,
               ),
               trailing: IconButton(
