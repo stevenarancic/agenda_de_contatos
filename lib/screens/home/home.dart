@@ -1,3 +1,5 @@
+import 'package:agenda_de_contatos/model/contact.dart';
+import 'package:agenda_de_contatos/provider/contacts.dart';
 import 'package:agenda_de_contatos/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,8 @@ class _HomeState extends State<Home> {
       ),
       body: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
+            Contact contact = contacts.elementAt(index);
+
             return ListTile(
               leading: IconButton(
                 icon: Icon(Icons.star),
@@ -36,7 +40,7 @@ class _HomeState extends State<Home> {
                 children: [
                   ClipOval(
                     child: Image.asset(
-                      "assets/images/Nicole.jpg",
+                      contact.photo,
                       width: 45,
                       height: 45,
                       fit: BoxFit.cover,
@@ -48,7 +52,7 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Nicole",
+                          contact.name,
                           style: TextStyle(
                             color: grayTheme,
                             fontSize: 20,
@@ -56,7 +60,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Text(
-                          "+55 51 99371-2339",
+                          contact.phone,
                           style: TextStyle(
                             color: grayTheme,
                             fontSize: 14,
@@ -72,7 +76,7 @@ class _HomeState extends State<Home> {
           separatorBuilder: (BuildContext context, int index) {
             return Divider();
           },
-          itemCount: 55),
+          itemCount: contacts.length),
     );
   }
 }
