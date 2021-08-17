@@ -1,4 +1,5 @@
 import 'package:agenda_de_contatos/model/contact.dart';
+import 'package:agenda_de_contatos/screens/details/widgets/communication_method.dart';
 import 'package:agenda_de_contatos/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,31 @@ class Details extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CommunicationMethod(
+                    communicationMethodName: "Ligar",
+                    communicationMethodIcon: Icons.phone_outlined,
+                  ),
+                  CommunicationMethod(
+                    communicationMethodName: "Enviar SMS",
+                    communicationMethodIcon: Icons.chat_outlined,
+                  ),
+                  CommunicationMethod(
+                    communicationMethodName: "Videochamada",
+                    communicationMethodIcon: Icons.videocam_outlined,
+                  ),
+                  CommunicationMethod(
+                    communicationMethodName: "E-mail",
+                    communicationMethodIcon: Icons.email_outlined,
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
                 children: [
                   Icon(
                     Icons.email_outlined,
@@ -55,13 +81,11 @@ class Details extends StatelessWidget {
                   ),
                   Text(
                     _contact.email,
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
                   ),
                 ],
               ),
             ),
+            Divider(),
           ],
         ),
       ),

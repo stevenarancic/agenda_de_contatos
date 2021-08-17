@@ -1,3 +1,4 @@
+import 'package:agenda_de_contatos/styles.dart';
 import 'package:flutter/material.dart';
 
 class CommunicationMethod extends StatelessWidget {
@@ -12,11 +13,17 @@ class CommunicationMethod extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(
-          this.communicationMethodIcon,
+        IconButton(
+          onPressed: () {},
+          icon: Icon(this.communicationMethodIcon),
+          color: blueTheme,
+          iconSize: 28,
         ),
         Text(
           this.communicationMethodName,
+          style: TextStyle(
+            color: blueTheme,
+          ),
         ),
       ],
     );
