@@ -24,10 +24,11 @@ class Details extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            FittedBox(
-              fit: BoxFit.cover,
+            Container(
+              width: MediaQuery.of(context).size.width,
               child: Image.asset(
                 _contact.photo,
+                fit: BoxFit.cover,
               ),
             ),
             Padding(
