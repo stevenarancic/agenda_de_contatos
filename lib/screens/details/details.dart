@@ -24,7 +24,12 @@ class Details extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(_contact.photo),
+            FittedBox(
+              fit: BoxFit.cover,
+              child: Image.asset(
+                _contact.photo,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8),
               child: Padding(
@@ -62,6 +67,45 @@ class Details extends StatelessWidget {
                   CommunicationMethod(
                     communicationMethodName: "E-mail",
                     communicationMethodIcon: Icons.email_outlined,
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.phone_outlined,
+                    color: blueTheme,
+                    size: 28,
+                  ),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        _contact.phone,
+                      ),
+                      Text(
+                        "Celular",
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.videocam),
+                    color: blueTheme,
+                    iconSize: 28,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.chat),
+                    color: blueTheme,
                   ),
                 ],
               ),
